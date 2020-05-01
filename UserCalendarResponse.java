@@ -1,16 +1,16 @@
 package com.interview.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class UserCalendarResponse {
 	
-	private ArrayList<Object> data;
+	private List<List<String>> data;
 
-	public ArrayList<Object> getData() {
+	public List<List<String>> getData() {
 		return data;
 	}
 
-	public void setData(ArrayList<Object> data) {
+	public void setData(List<List<String>> data) {
 		this.data = data;
 	}
 	

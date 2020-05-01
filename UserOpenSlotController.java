@@ -2,6 +2,7 @@ package com.interview.controller;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,11 +43,11 @@ public class UserOpenSlotController {
 		  
 		// generate open slot 
 		for (UserCalendarResponse responseItem : responesList) { 
-			ArrayList<Object> slotList = responseItem.getData(); 
+			List<List<String>> slotList = responseItem.getData(); 
 			
 			// for both start and end are inside a open slot
-			for (Object slot : slotList ) {
-				ArrayList<String> startEndArrayList = (ArrayList<String>)slot;
+			for (List<String> slot : slotList ) {
+				List<String> startEndArrayList = slot;
 				
 				Iterator<Slot> it = openSlotList.iterator(); 
 				while (it.hasNext()) { 
@@ -72,8 +73,8 @@ public class UserOpenSlotController {
 			}
 			
 			// for start is inside a open slot
-			for (Object slot : slotList ) {
-				ArrayList<String> startEndArrayList = (ArrayList<String>)slot;
+			for (List<String> slot : slotList ) {
+				List<String> startEndArrayList = slot;
 				
 				Iterator<Slot>it = openSlotList.iterator(); 
 				while (it.hasNext()) { 
@@ -87,8 +88,8 @@ public class UserOpenSlotController {
 			}
 			
 			// for end is inside a open slot
-			for (Object slot : slotList ) {
-				ArrayList<String> startEndArrayList = (ArrayList<String>)slot;
+			for (List<String> slot : slotList ) {
+				List<String> startEndArrayList = slot;
 				
 				Iterator<Slot>it = openSlotList.iterator(); 
 				while (it.hasNext()) { 
